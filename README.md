@@ -12,7 +12,7 @@ _Las siguientes instrucciones permitirán obtener una copia del proyecto en func
 - [x] Además de * para la multiplicación, permita usar x.
 - [x] Permita que el usuario introduzca espacios en la operación,
   ignorándolos: "5+ 6"
-- [ ] Trabaje con números de más de un dígito. Suponga que los números
+- [x] Trabaje con números de más de un dígito. Suponga que los números
   introducidos por el usuario caben en un int: "9874*238984".
 - [ ] Permita que el primer número de la operación pueda ser negativo: "-
   3*6".
@@ -25,15 +25,15 @@ _Las siguientes instrucciones permitirán obtener una copia del proyecto en func
 - [ ] Permita calcular exponenciales con el operador ^:
 - [ ] Permita usar las constantes PI y e como sus valores matemáticos
   correspondientes:
-- [ ] Trabaje con números con decimales:
-- [ ] **a)** Use el punto (.) como separador de decimales: "2.3*6.1".
-- [ ] **b)** Use la coma (,) como separador de decimales: "5,6*9,2"
-- [ ] Si la operación introducida por el usuario no es válida, coménteselo y
+- [x] Trabaje con números con decimales:
+- [x] **a)** Use el punto (.) como separador de decimales: "2.3*6.1".
+- [x] **b)** Use la coma (,) como separador de decimales: "5,6*9,2"
+- [x] Si la operación introducida por el usuario no es válida, coménteselo y
   vuelva a preguntarle.
-- [ ] Siga pidiéndole operaciones al usuario, no termine el programa después
+- [x] Siga pidiéndole operaciones al usuario, no termine el programa después
   de la primera. Permítale que termine el programa si introduce la palabra exit.
   **Nota**: Este extra es necesario para los siguientes extras.
-- [ ] Muéstrele al usuario lo que permite realizar la calculadora y permítele
+- [x] Muéstrele al usuario lo que permite realizar la calculadora y permítele
   introducir la palabra help para volver a mostrar la ayuda.
 - [ ] Permita que el usuario no introduzca el primer operando de la
   operación y en ese caso se usaría el resultado de la operación anterior:

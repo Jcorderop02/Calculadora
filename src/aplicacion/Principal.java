@@ -10,57 +10,95 @@ See the License for the specific language governing permissions and
 limitations under the License.*/
 
 /**
+ * Es la clase
  *
  * @author Juan Cordero
- * @version 1.0 20/11/21
+ * @version 1.0 18/11/21
  */
 package aplicacion;
 
 import java.util.Scanner;
 
 public class Principal {
+    static int estado = -1;
+    static int NOMBRE = 0;
+    static int OPERACION = 1;
+    static int ESTADO_FINAL = 5;
+
     public static void main(String[] args) {
         System.out.println("Bienvenido");
         System.out.println("Introduzca una operación");
         String nombre;
+        estado = OPERACION;
         Scanner sc = new Scanner(System.in);
         String respuesta;
 
-        //Funciona solo con operaciones menores que 10
-        double calc = 0;
-        String scan = "2+4+4+2";
-        int resta = scan.indexOf('/');
+        //Funciona con todo tipo de operaciones, pero con el mismo signo
+        while (estado == OPERACION) {
+            respuesta = sc.nextLine().replaceAll("\\s", "");
+            if (!exitOrHelp(respuesta)) {
+                if (respuesta.contains("+")) {
+                    double solucion = 0;
+                    String[] numeros = respuesta.split("\\+");
 
-        while (resta > 0) {
-            calc = Double.parseDouble(scan.substring(resta - 1, resta)) / Double.parseDouble(scan.substring(resta + 1, resta + 2));
-            String new_scan = scan.substring(0, resta - 1) + (int) calc + scan.substring(resta + 2, scan.length());
-            scan = new_scan;
-            resta = scan.indexOf('/');
+                    for (String a : numeros) {
+                        solucion = solucion + Double.parseDouble(a);
+                    }
+                    System.out.println(solucion);
+                    System.out.println("Introduzca otra operación");
+                } else if (respuesta.contains("-")) {
+                    double solucion = 0;
+                    String[] numeros = respuesta.split("-");
+
+                    for (String a : numeros) {
+                        solucion = solucion - Double.parseDouble(a);
+                    }
+                    System.out.println(solucion);
+                    System.out.println("Introduzca otra operación");
+
+                } else if (respuesta.contains("*") || (respuesta.contains("x"))) {
+                    double solucion = 1;
+                    String[] numeros = respuesta.split("\\*");
+
+                    for (String t : numeros) {
+                        solucion = solucion * Double.parseDouble(t);
+                    }
+                    System.out.println(solucion);
+                    System.out.println("Introduzca otra operación");
+                } else if (respuesta.contains("/")) {
+                    double solucion = 0;
+                    String[] numeros = respuesta.split("/");
+                    solucion = Double.parseDouble(numeros[0]) / Double.parseDouble(numeros[1]);
+
+                    if (numeros.length > 2) {
+                        for (int r = 2; r < numeros.length; r++) {
+                            solucion = solucion / Double.parseDouble(numeros[r]);
+                        }
+                    }
+                    System.out.println(solucion);
+                    System.out.println("Introduzca otra operación");
+                } else {
+                    System.out.println("No introdujiste ninguno de estos operandos: '+,-,*,/'");
+                }
+            }
         }
-        System.out.println("Scan 1: " + scan);
-        int resta2 = scan.indexOf('*');
-        while (resta2 > 0) {
-            calc = Double.parseDouble(scan.substring(resta2 - 1, resta2)) * Double.parseDouble(scan.substring(resta2 + 1, resta2 + 2));
-            String new_scan = scan.substring(0, resta2 - 1) + (int) calc + scan.substring(resta2 + 2, scan.length());
-            scan = new_scan;
-            resta2 = scan.indexOf('*');
+        sc.close();
+    }
+
+    public static boolean exitOrHelp(String respuesta) {
+
+        if (respuesta.equalsIgnoreCase("help")) {
+            help();
+            return true;
+        } else if (respuesta.equalsIgnoreCase("exit")) {
+            estado = ESTADO_FINAL;
+            return true;
         }
-        System.out.println("Scan 2: " + scan);
-        int resta3 = scan.indexOf('+');
-        while (resta3 > 0) {
-            calc = Double.parseDouble(scan.substring(resta3 - 1, resta3)) + Double.parseDouble(scan.substring(resta3 + 1, resta3 + 2));
-            String new_scan = scan.substring(0, resta3 - 1) + (int) calc + scan.substring(resta3 + 2, scan.length());
-            scan = new_scan;
-            resta3 = scan.indexOf('+');
-        }
-        System.out.println("Scan 3: " + scan);
-        int resta4 = scan.indexOf('-');
-        while (resta4 > 0) {
-            calc = Double.parseDouble(scan.substring(resta4 - 1, resta4)) - Double.parseDouble(scan.substring(resta4 + 1, resta4 + 2));
-            String new_scan = scan.substring(0, resta4 - 1) + (int) calc + scan.substring(resta4 + 2, scan.length());
-            scan = new_scan;
-            resta4 = scan.indexOf('-');
-        }
-        System.out.println("Scan 4: " + scan);
+        return false;
+    }
+
+    private static void help() {
+        System.out.println("A");
     }
 }
+
