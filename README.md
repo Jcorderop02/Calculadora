@@ -18,7 +18,7 @@ _Las siguientes instrucciones permitirán obtener una copia del proyecto en func
   3*6".
 - [x] Permita más de un operador en la operación:
 - [x] **a)** Todos los operadores tienen que ser iguales: "5+8+3+6".
-- [ ] **b)** Los operadores pueden ser diferentes. Tenga en cuenta el orden de
+- [x] **b)** Los operadores pueden ser diferentes. Tenga en cuenta el orden de
   prioridad para resolver las operaciones: "4+6-4*9".
 - [ ] **c)** Permita el uso de paréntesis en la operación: "5*(3+4)".
 - [ ] Permita calcular factoriales con el operador !:
@@ -30,10 +30,10 @@ _Las siguientes instrucciones permitirán obtener una copia del proyecto en func
 - [x] **b)** Use la coma (,) como separador de decimales: "5,6*9,2"
 - [x] Si la operación introducida por el usuario no es válida, coménteselo y
   vuelva a preguntarle.
-- [x] Siga pidiéndole operaciones al usuario, no termine el programa después
+- [ ] Siga pidiéndole operaciones al usuario, no termine el programa después
   de la primera. Permítale que termine el programa si introduce la palabra exit.
   **Nota**: Este extra es necesario para los siguientes extras.
-- [x] Muéstrele al usuario lo que permite realizar la calculadora y permítele
+- [ ] Muéstrele al usuario lo que permite realizar la calculadora y permítele
   introducir la palabra help para volver a mostrar la ayuda.
 - [ ] Permita que el usuario no introduzca el primer operando de la
   operación y en ese caso se usaría el resultado de la operación anterior:
