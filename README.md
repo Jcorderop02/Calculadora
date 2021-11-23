@@ -10,14 +10,14 @@ _Las siguientes instrucciones permitirán obtener una copia del proyecto en func
 ### Extras
 
 - [x] Además de * para la multiplicación, permita usar x.
-- [ ] Permita que el usuario introduzca espacios en la operación,
+- [x] Permita que el usuario introduzca espacios en la operación,
   ignorándolos: "5+ 6"
 - [ ] Trabaje con números de más de un dígito. Suponga que los números
   introducidos por el usuario caben en un int: "9874*238984".
 - [ ] Permita que el primer número de la operación pueda ser negativo: "-
   3*6".
-- [ ] Permita más de un operador en la operación:
-- [ ] **a)** Todos los operadores tienen que ser iguales: "5+8+3+6".
+- [x] Permita más de un operador en la operación:
+- [x] **a)** Todos los operadores tienen que ser iguales: "5+8+3+6".
 - [ ] **b)** Los operadores pueden ser diferentes. Tenga en cuenta el orden de
   prioridad para resolver las operaciones: "4+6-4*9".
 - [ ] **c)** Permita el uso de paréntesis en la operación: "5*(3+4)".
